@@ -1,0 +1,35 @@
+{
+  "name": "@dannyvcfranca/handsome-helpers",
+  "version": "0.1.0",
+  "description": "Time-saving helpers for JavaScript and TypeScript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dannyfranca/js-handsome-helpers"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "compile": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Danny França",
+    "email": "contato@dannyfranca.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dannyfranca/js-handsome-helpers/issues"
+  },
+  "homepage": "https://github.com/dannyfranca/js-handsome-helpers#readme",
+  "dependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/lodash": "^4.14.134",
+    "@types/node": "^12.0.8",
+    "glob": "^7.1.4",
+    "lodash": "^4.17.11",
+    "typescript": "^3.5.1"
+  }
+}
