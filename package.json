@@ -1,5 +1,5 @@
 {
-  "name": "@dannyvcfranca/handsome-helpers",
+  "name": "@dannyfranca/handsome-helpers",
   "version": "0.1.0",
   "description": "Time-saving helpers for JavaScript and TypeScript",
   "repository": {
@@ -9,11 +9,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "compile": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc"
   },
   "files": [
-    "dist"
+    "README.md",
+    "LICENCE",
+    "dist/"
   ],
   "author": {
     "name": "Danny França",
