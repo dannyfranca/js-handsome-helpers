@@ -1,11 +1,8 @@
 {
   "name": "@dannyfranca/handsome-helpers",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Time-saving helpers for JavaScript and TypeScript",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dannyfranca/js-handsome-helpers"
-  },
+  "repository": "https://github.com/dannyfranca/js-handsome-helpers",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
