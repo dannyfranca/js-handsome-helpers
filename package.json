@@ -1,6 +1,6 @@
 {
   "name": "@dannyfranca/handsome-helpers",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Time-saving helpers for JavaScript and TypeScript",
   "repository": "https://github.com/dannyfranca/js-handsome-helpers",
   "main": "lib/index.js",
@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/dannyfranca/js-handsome-helpers#readme",
   "dependencies": {
-    "glob": "^7.1.4",
     "lodash": "^4.17.11"
   },
   "devDependencies": {

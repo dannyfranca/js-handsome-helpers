@@ -1,10 +1,19 @@
-import {resolve, basename} from 'path'
-import glob from 'glob'
+import arrayFromString from './helpers/arrayFromString'
+import isEmpty from './helpers/isEmpty'
+import mountPath from './helpers/mountPath'
+import mountPathArray from './helpers/mountPathArray'
+import optionsFromString from './helpers/optionsFromString'
+import sleep from './helpers/sleep'
+import stripTags from './helpers/stripTags'
+import typeValue from './helpers/typeValue'
 
-const exp: any = {}
-glob.sync('/*.js', {root: resolve(__dirname, 'helpers')}).forEach(function (path) {
-  const namedExport = basename(path).replace('.js', '')
-  exp[namedExport] = require(path).default
-})
-
-export default exp
+export default {
+  arrayFromString,
+  isEmpty,
+  mountPath,
+  mountPathArray,
+  optionsFromString,
+  sleep,
+  stripTags,
+  typeValue
+}
