@@ -6,8 +6,8 @@
     "type": "git",
     "url": "https://github.com/dannyfranca/js-handsome-helpers"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
@@ -18,7 +18,7 @@
   "files": [
     "README.md",
     "LICENCE",
-    "dist/"
+    "lib/"
   ],
   "author": {
     "name": "Danny França",
