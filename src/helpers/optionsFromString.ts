@@ -1,5 +1,5 @@
-import typeOptions from '~/types/options'
-import typeSeparators from '~/types/optionStringSeparators'
+import typeOptions from '../types/options'
+import typeSeparators from '../types/optionStringSeparators'
 
 export default function (str: string, seps: typeSeparators): typeSeparators {
   const options: typeOptions = {}

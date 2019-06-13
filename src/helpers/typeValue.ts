@@ -1,4 +1,4 @@
-import isEmpty from "~/helpers/isEmpty"
+import isEmpty from "./isEmpty"
 
 export default (type: any, val: any): any => {
   const typeOf = typeof val
