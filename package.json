@@ -1,6 +1,6 @@
 {
   "name": "@dannyfranca/handsome-helpers",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Time-saving helpers for JavaScript and TypeScript",
   "repository": {
     "type": "git",
@@ -9,7 +9,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "compile": "tsc"
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
   },
   "files": [
     "README.md",
@@ -26,11 +30,19 @@
   },
   "homepage": "https://github.com/dannyfranca/js-handsome-helpers#readme",
   "dependencies": {
+    "glob": "^7.1.4",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-typescript": "^7.3.3",
     "@types/glob": "^7.1.1",
     "@types/lodash": "^4.14.134",
     "@types/node": "^12.0.8",
-    "glob": "^7.1.4",
-    "lodash": "^4.17.11",
-    "typescript": "^3.5.1"
+    "typescript": "^3.3.3"
   }
 }
