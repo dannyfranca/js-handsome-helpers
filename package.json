@@ -1,6 +1,6 @@
 {
   "name": "@dannyfranca/handsome-helpers",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Time-saving helpers for JavaScript and TypeScript",
   "license": "MIT",
   "author": {
@@ -28,6 +28,7 @@
   },
   "files": [
     "README.md",
+    "LICENSE",
     "lib/"
   ],
   "bugs": {

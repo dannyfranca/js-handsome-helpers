@@ -1,14 +1,14 @@
 module.exports = {
-  transform: {
-    "^.+\\.tsx?$": "ts-jest"
-  },
+  testEnvironment: 'node',
   setupFilesAfterEnv: ["jest-extended"],
   testMatch: ['<rootDir>/test/**/*.test.{js,ts}'],
   testPathIgnorePatterns: ["/lib/", "/node_modules/"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   collectCoverage: true,
-  testEnvironment: 'node',
   collectCoverageFrom: [
-    '<rootDir>/lib/**/*.js'
-  ]
+    '<rootDir>/src/**/*.{js,ts}'
+  ],
+  transform: {
+    "^.+\\.tsx?$": "ts-jest"
+  }
 }
