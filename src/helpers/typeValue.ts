@@ -31,8 +31,9 @@ export default (val: any, type: any): any => {
         return typeOf === 'boolean' ? val : Boolean(val)
       case Function:
         return function () {
+          return undefined
         }
     }
-    return
+    return undefined
   }
 }
