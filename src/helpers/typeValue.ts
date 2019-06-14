@@ -1,9 +1,10 @@
 import isEmpty from "./isEmpty"
 
-export default (type: any, val: any): any => {
+export default (val: any, type: any): any => {
   const typeOf = typeof val
 
-  if (type === Object && val instanceof Array) return Object()
+  if (type === Object && val instanceof Array) return {...val}
+  if (type === Array && val instanceof Object) return Object.values(val)
   if (!isEmpty(val) && val instanceof type) {
     return val
   } else {
@@ -13,11 +14,21 @@ export default (type: any, val: any): any => {
       case Array:
         return []
       case String:
-        return typeOf === 'string' ? val : String()
+        if (typeOf === 'string') {
+          return val
+        } else if (typeof val === 'number') {
+          return String(val)
+        }
+        return String()
       case Number:
-        return typeOf === 'number' ? val : Number()
+        if (typeOf === 'number') {
+          return val
+        }
+        const res = Number(val)
+        if (isNaN(res)) return Number()
+        return res
       case Boolean:
-        return typeOf === 'boolean' ? val : Boolean()
+        return typeOf === 'boolean' ? val : Boolean(val)
       case Function:
         return function () {
         }

@@ -6,8 +6,9 @@ import optionsFromString from './helpers/optionsFromString'
 import sleep from './helpers/sleep'
 import stripTags from './helpers/stripTags'
 import typeValue from './helpers/typeValue'
+import helpers from "./types/helpers";
 
-export default {
+const Helpers: helpers = {
   arrayFromString,
   isEmpty,
   mountPath,
@@ -17,3 +18,5 @@ export default {
   stripTags,
   typeValue
 }
+
+export default Helpers

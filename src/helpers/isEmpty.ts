@@ -9,7 +9,7 @@ export default (val: any): boolean => {
     case 'string':
       return val === ''
     case 'number':
-      return isNaN(val) || !isFinite(val)
+      return isNaN(val) || !isFinite(val) || val == 0
     default:
       return false
   }
