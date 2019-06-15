@@ -27,12 +27,12 @@ console.log(opt) // { x: 'foo', y: 'bar' }
 or
 
 ```js
-import { optionsFromString } from '@dannyfranca/handsome-helpers'
+import { anyMethod } from '@dannyfranca/handsome-helpers'
 ```
 
 ## Methods
 
-[optionsFromString](/docs/optionsFromString.md)
+To see a list of use cases and expected results, look at the test folder.
 
 ## License
 
