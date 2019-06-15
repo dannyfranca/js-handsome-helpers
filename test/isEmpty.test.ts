@@ -20,10 +20,12 @@ test('array true', () => {
 
 test('array false', () => {
   expect(Helpers.isEmpty([0])).toBe(false)
+  expect(Helpers.isEmpty([])).toBe(true)
 })
 
 test('object true', () => {
   expect(Helpers.isEmpty({})).toBe(true)
+  expect(Helpers.isEmpty([])).toBe(true)
 })
 
 test('object false', () => {

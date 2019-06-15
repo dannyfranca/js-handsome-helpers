@@ -3,8 +3,8 @@ export default (val: any): boolean => {
     case 'undefined':
       return true
     case 'object':
-      if (val instanceof Object) return Object.keys(val).length === 0
-      else if (val instanceof Array) return val.length === 0
+      if (val instanceof Array) return val.length === 0
+      else if (val instanceof Object) return Object.keys(val).length === 0
       else return true
     case 'string':
       return val === ''

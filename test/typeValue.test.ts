@@ -1,4 +1,5 @@
 import Helpers from '../src/index'
+import {Function} from "@babel/types";
 
 test('strings', () => {
   expect(Helpers.typeValue('asd', String)).toBe('asd')
@@ -40,4 +41,12 @@ test('objects', () => {
   expect(Helpers.typeValue([1, 3], Object)).toStrictEqual({0: 1, 1: 3})
   expect(Helpers.typeValue('', Object)).toStrictEqual({})
   expect(Helpers.typeValue([], Object)).toStrictEqual({})
+})
+
+test('function', () => {
+  expect(Helpers.typeValue({foo: 'bar'}, Function)()).toBe(undefined)
+})
+
+test('any', () => {
+  expect(Helpers.typeValue({foo: 'bar'}, Promise)).toBe(undefined)
 })
