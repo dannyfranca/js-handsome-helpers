@@ -17,6 +17,7 @@ npm install @dannyfranca/handsome-helpers
 
 ## Usage
 
+### Default
 ```js
 import helpers from '@dannyfranca/handsome-helpers'
 
@@ -27,12 +28,63 @@ console.log(opt) // { x: 'foo', y: 'bar' }
 or
 
 ```js
-import { anyMethod } from '@dannyfranca/handsome-helpers'
+import anyMethod from '@dannyfranca/handsome-helpers/lib/helpers/anyMethod'
+```
+
+### Proxyed
+
+```js
+import helpers from '@dannyfranca/handsome-helpers/lib/proxyhelpers'
+
+// Works just right the defaults
+const opt = helpers.optionsFromString('x:foo|y:bar')
+
+console.log(opt) // { x: 'foo', y: 'bar' }
+```
+
+####But now you can add and merge your custom helpers
+
+##### Adding/Overwriting
+
+```js
+import helpers from '@dannyfranca/handsome-helpers/lib/proxyhelpers'
+
+// with chainable method $add
+helpers
+    .$add('customHelper1', function(...args) {
+      // ...
+    })
+    .$add('customHelper2', function(...args) {
+      // ...
+    })
+    
+//directly
+helpers.customHelpers = function(...args) {
+  // ...
+}
+
+//  Dont try to name with $, with throw an Error
+helpers.$customHelpers = function(...args) {
+  // ...
+}
+```
+
+##### Merging
+
+```js
+import helpers from '@dannyfranca/handsome-helpers/lib/proxyhelpers'
+
+helpers.$merge({
+    customHelper() {
+      // ...
+    },
+// ...
+})
 ```
 
 ## Methods
 
-To see a list of use cases and expected results, look at the test folder.
+To see a list of use cases and expected results, look at the [test folder](./test).
 
 ## License
 
