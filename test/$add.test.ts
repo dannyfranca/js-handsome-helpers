@@ -1,17 +1,17 @@
-import Helpers from '../src/index'
+import proxyHelpers from '../src/proxyHelpers'
 
 test('add function', () => {
   expect(function () {
-    Helpers.$add('customHelper', function (attr: string) {
+    proxyHelpers.$add('customHelper', function (attr: string) {
       return attr + 'ok'
     })
-    return Helpers.customHelper('string_')
+    return proxyHelpers.customHelper('string_')
   }()).toBe('string_ok')
 
   // empty name error
   expect(function () {
     try {
-      Helpers.$add('', function (attr: string) {
+      proxyHelpers.$add('', function (attr: string) {
         return attr + 'ok'
       })
     } catch (e) {
@@ -22,7 +22,7 @@ test('add function', () => {
   // name starting with $ error
   expect(function () {
     try {
-      Helpers.$add('$customHelper', function (attr: string) {
+      proxyHelpers.$add('$customHelper', function (attr: string) {
         return attr + 'ok'
       })
     } catch (e) {
@@ -33,16 +33,16 @@ test('add function', () => {
 
 test('add directly function', () => {
   expect(function () {
-    Helpers.customHelper = function (attr: string) {
+    proxyHelpers.customHelper = function (attr: string) {
       return attr + 'ok'
     }
-    return Helpers.customHelper('string_')
+    return proxyHelpers.customHelper('string_')
   }()).toBe('string_ok')
 
   // error
   expect(function () {
     try {
-      Helpers.$customHelper = function (attr: string) {
+      proxyHelpers.$customHelper = function (attr: string) {
         return attr + 'ok'
       }
     } catch (e) {
@@ -53,7 +53,7 @@ test('add directly function', () => {
 
 test('add not function', () => {
   expect(function () {
-    Helpers.$add('customHelper', Promise.resolve('string'))
-    return Helpers.customHelper('string_')
+    proxyHelpers.$add('customHelper', Promise.resolve('string'))
+    return proxyHelpers.customHelper('string_')
   }).toThrow(Error)
 })

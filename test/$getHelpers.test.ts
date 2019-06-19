@@ -1,6 +1,6 @@
 import Helpers from '../src/index'
-import {onlyHelpers} from '../src/index'
+import proxyHelpers from '../src/proxyHelpers'
 
 test('getHelpers', () => {
-  expect(Helpers.$getHelpers()).toStrictEqual(onlyHelpers)
+  expect(proxyHelpers.$getHelpers()).toStrictEqual(Helpers)
 })

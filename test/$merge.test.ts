@@ -1,8 +1,8 @@
-import Helpers from '../src/index'
+import proxyHelpers from '../src/proxyHelpers'
 
 test('merge functions', () => {
   expect(function () {
-    Helpers.$merge({
+    proxyHelpers.$merge({
       customHelper(attr: string) {
         return attr + 'ok'
       },
@@ -11,8 +11,8 @@ test('merge functions', () => {
       }
     })
     return [
-      Helpers.customHelper('string_'),
-      Helpers.customHelper2('string_')
+      proxyHelpers.customHelper('string_'),
+      proxyHelpers.customHelper2('string_')
     ]
   }()).toStrictEqual([
     'string_ok',
